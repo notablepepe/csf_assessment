@@ -1,0 +1,14 @@
+<h1>Share a News</h1>
+<form [formGroup]="form" (ngSubmit)="postNews()">
+    <p>Title: <input type="text" formControlName="title"></p>
+    <p>Photo: <input type="file" accept="image/*" #file formControlName="photo"></p>
+    <p>Description: <input type="text" formControlName="description"></p>
+    <p>Tags: <input type="text" formControlName="tags"><button (click)="addTag()"> + </button></p>
+    <ul *ngIf="tags">
+        <li *ngFor="let tag of tags">
+            <button (click)="removeTag(tag)" #tag>{{tag}}</button>
+        </li>
+    </ul>
+    <button [routerLink]="['/']">Back</button><button (click)="postNews()" [routerLink]="['/']" [disabled]="!form.valid">Post News</button>
+
+</form>

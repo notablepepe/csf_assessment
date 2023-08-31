@@ -1,0 +1,13 @@
+<h1>List of news with #{{hashtag}}</h1>
+<button [routerLink]="['/']">Back</button>
+<button [routerLink]="['/news']">Post News</button>
+<table>
+    <tr *ngFor="let news of hashtagList">
+        <td>{{news.title}}</td>
+        <td>{{news.postDate}}</td>
+        <td>{{news.image}}</td>
+        <td>{{news.description}}</td>
+        <td>{{news.tags}}</td>
+    </tr>
+
+</table>

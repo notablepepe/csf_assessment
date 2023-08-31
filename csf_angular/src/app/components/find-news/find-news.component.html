@@ -1,0 +1,15 @@
+<p>Time: </p>
+<select #intervalRef (change)="updateInterval(intervalRef.value)">
+    <option *ngFor="let interval of intervalArray">
+        {{interval}}
+    </option>
+</select>
+<button [routerLink]="['/news']">Post News</button>
+<p>Top Tags</p>
+<table>
+    <tr *ngFor="let tag of tagList">
+        <a [routerLink]="['/news/' + tag.tag]">
+            <td>{{tag.tag}}({{tag.count}})</td>
+        </a>
+    </tr>
+</table>
